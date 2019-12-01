@@ -17,12 +17,15 @@
   echo "Start create input file for Aria2c Downloader..." . PHP_EOL;
   foreach($links as $link)
   {
+    echo "\nOpening link: " . $link . "\n\n";
     $base_url = "";
     $id = "";
     if($files = GetAllFiles($link))
     {
+      echo "\n\nRetrieving Download Links:\n\n";
       foreach ($files as $file)
       {
+        echo $file->download_link . "\n";
         $line = $file->download_link . PHP_EOL;
         $line .= "  out=" . $file->output . PHP_EOL;
         $line .= "  referer=" . $link . PHP_EOL;
@@ -30,14 +33,16 @@
 
         file_put_contents($file4aria, $line, FILE_APPEND);
       }
+      echo "\n\n";
     }
   }
 
-  echo "Running Aria2c for download..." . PHP_EOL;
-  StartDownload();
+  // TODO: save links to a file instead of starting a dowloader
+  // echo "\nTrying to run the Aria2c to start the download..." . PHP_EOL;
+  // StartDownload();
   @unlink($file4aria);
 
-  echo "Done!" . PHP_EOL;
+  echo "Copy the retrieved links from above to the Progressive Downloader https://www.macpsd.net\nDone!" . PHP_EOL;
 
   // ======================================================================================================== //
 
@@ -108,7 +113,7 @@
   function StartDownload()
   {
     global $aria2c, $file4aria;
-    $command = "\"{$aria2c}\" --file-allocation=none --min-tls-version=TLSv1 --max-connection-per-server=10 --split=10 --max-concurrent-downloads=10 --summary-interval=0 --continue --user-agent=\"Mozilla/5.0 (compatible; Firefox/3.6; Linux)\" --input-file=\"{$file4aria}\"";
+    $command = "mono \"{$aria2c}\".exe --file-allocation=none --min-tls-version=TLSv1 --max-connection-per-server=10 --split=10 --max-concurrent-downloads=10 --summary-interval=0 --continue --user-agent=\"Mozilla/5.0 (compatible; Firefox/3.6; Linux)\" --input-file=\"{$file4aria}\"";
     passthru("{$command}");
   }
 
