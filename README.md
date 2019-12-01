@@ -1,21 +1,23 @@
-# Cloud&#64;Mail.Ru Downloader
+# Cloud.Mail.Ru Downloader
 
 ### Installation on Mac OS X
 
 - follow any tutorial to install [php 7](https://medium.com/@crmcmullen/how-to-install-php-on-macos-10-13-high-sierra-and-10-14-mojave-using-homebrew-and-pecl-ef2276db3d62) for your version of Mac OS X
-- If you got "Cannot find libs..." errors when installing php, run the command below and try again:\n
+- If you got "Cannot find libs..." errors when installing php, run the command below and try again:
   `xcode-select --install`
-- test your php version by entering this line in the terminal (the version should be between _5.x.x and 7.2.x_):\n
+- test your php version by entering this line in the terminal (the version should be between _5.x.x and 7.2.x_):
   `php -v`
-- check whether openssl for php in installed and enabled by running the following line in the terminal and looking for OpenSSL:\n`php -i | grep enabled`
-- if you can't find the OpenSSL Support in the above list, install it by running or following some of the [tutorials](https://medium.com/this-old-code/installing-php-7-2-bc779b23dce8):\n
+- check whether openssl for php in installed and enabled by running the following line in the terminal and looking for OpenSSL:
+  `php -i | grep enabled`
+- if you can't find the OpenSSL Support in the above list, install it by running or following some of the [tutorials](https://medium.com/this-old-code/installing-php-7-2-bc779b23dce8):
   `brew install openssl`
 - download, install and configure [Progressive Downloader](https://www.macpsd.net) or any other similar downloader for Mac OS X
 
 ### Running on Mac OS X
 
 - paste one or more links to the mail.ru cloud into the _links.txt_ file
-- run the script to get the _direct links_ to all the files from the cloud as a console output:\n`php cloud.mail.ru_downloader.php`
+- run the script to get the _direct links_ to all the files from the cloud as a console output:
+  `php cloud.mail.ru_downloader.php`
 - paste the retrieved _direct links_ into the downloads folder you've chosen in the _Progressive Downloader_
 
 ### Installation for Windows
@@ -55,4 +57,4 @@
 - then just start any exe file as it's described [here](https://github.com/yar229/WebDavMailRuCloud#mac-os-x):
   `mono wdmrc.exe -p 7000`
 
-#### Thanks to [Geograph-us](https://github.com/Geograph-us/Cloud-Mail.Ru-Downloader)
+#### Thanks to [Geograph-us](https://github.com/Geograph-us/Cloud-Mail.Ru-Downloader) for the initial version and installation instructions for Windows
