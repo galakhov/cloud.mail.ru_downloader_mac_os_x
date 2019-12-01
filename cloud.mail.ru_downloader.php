@@ -3,18 +3,18 @@
   $storage_path = "downloads";
 
   $file4aria = "input.txt";
-  $aria2c = "aria2c";
+  $aria2c = "/usr/local/aria2/bin/aria2c";
   $current_dir = dirname(__FILE__);
 
   // ======================================================================================================== //
 
   $file4aria = pathcombine($current_dir, $file4aria);
-  $aria2c = pathcombine($current_dir, $aria2c);
+  // $aria2c = pathcombine($current_dir, $aria2c);
 
   if (file_exists($file4aria)) unlink($file4aria);
   $links = file($links_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
-  echo "Start create input file for Aria2c Downloader..." . PHP_EOL;
+  echo "Start create input file for aria2c Downloader..." . PHP_EOL;
   foreach($links as $link)
   {
     echo "\nOpening link: " . $link . "\n\n";
@@ -37,12 +37,12 @@
     }
   }
 
-  // TODO: save links to a file instead of starting a dowloader
-  // echo "\nTrying to run the Aria2c to start the download..." . PHP_EOL;
-  // StartDownload();
+  // start the aria2 dowloader on mac os x
+  echo "\nTrying to run the aria2c...\n" . PHP_EOL;
+  StartDownload();
   @unlink($file4aria);
 
-  echo "Copy the retrieved links from above to the Progressive Downloader https://www.macpsd.net\nDone!" . PHP_EOL;
+  echo "If the download failed, copy the retrieved direct links from above to the Progressive Downloader: https://www.macpsd.net\n\nDone!" . PHP_EOL;
 
   // ======================================================================================================== //
 
@@ -113,7 +113,9 @@
   function StartDownload()
   {
     global $aria2c, $file4aria;
-    $command = "mono \"{$aria2c}\".exe --file-allocation=none --min-tls-version=TLSv1 --max-connection-per-server=10 --split=10 --max-concurrent-downloads=10 --summary-interval=0 --continue --user-agent=\"Mozilla/5.0 (compatible; Firefox/3.6; Linux)\" --input-file=\"{$file4aria}\"";
+    // #!/bin/bash
+    $command = "\"{$aria2c}\" --file-allocation=none --min-tls-version=TLSv1.3 --max-connection-per-server=10 --split=10 --max-concurrent-downloads=10 --summary-interval=0 --continue --download-result=full --user-agent=\"Mozilla/5.0 (compatible; Firefox/3.6; Linux)\" --input-file=\"{$file4aria}\" --dir=\"./downloads\"";
+    echo "Starting the downloads...\nCheck the ./downloads/ folder..." . PHP_EOL;
     passthru("{$command}");
   }
 
