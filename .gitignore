@@ -1,5 +1,4 @@
 .DS_Store
-downloads/*
 
 # local env files
 .env.local
