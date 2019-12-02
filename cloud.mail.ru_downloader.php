@@ -114,19 +114,16 @@
   {
     global $aria2c, $file4aria;
     // #!/bin/bash
-    $command = "\"{$aria2c}\" --file-allocation=none --min-tls-version=TLSv1.3 --max-connection-per-server=10 --split=10 --max-concurrent-downloads=10 --summary-interval=0 --continue --download-result=full --user-agent=\"Mozilla/5.0 (compatible; Firefox/3.6; Linux)\" --input-file=\"{$file4aria}\" --dir=\"./downloads\"";
+    $command = "\"{$aria2c}\" --file-allocation=none --min-tls-version=TLSv1.3 --max-connection-per-server=5 --split=5 --max-concurrent-downloads=5 --summary-interval=0 --continue --download-result=full --user-agent=\"Mozilla/5.0 (compatible; Firefox/3.6; Linux)\" --input-file=\"{$file4aria}\" --dir=\"./downloads\"";
     echo "Starting the downloads...\nCheck the ./downloads/ folder..." . PHP_EOL;
 
     while (@ ob_end_flush()); // end all output buffers if any
     $proc = popen($command, 'r');
-    // echo '<pre>';
     while (!feof($proc))
     {
         echo fread($proc, 4096);
         @ flush();
     }
-    // echo '</pre>';
-
     // passthru("{$command}");
   }
 
