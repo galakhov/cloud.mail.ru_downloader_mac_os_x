@@ -33,7 +33,12 @@
 
 - Для работы скрипта нужно установить php на компьютер, например отсюда http://windows.php.net/download/ (если уже установлен какой-нибудь Веб-сервер, например, [Denwer](http://www.denwer.ru/) или [OpenServer](http://open-server.ru/), то php от него тоже подойдет).
 - Скрипт консольный, написан на PHP, поэтому работает в PHP версий _5.x.x-7.2.x_.
-- [Скачать](https://github.com/galakhov/cloud.mail.ru_downloader_mac_os_x/archive/master.zip) и разархивировать либо склонировать с помощью команды: `git clone https://github.com/galakhov/cloud.mail.ru_downloader_mac_os_x.git cloud.mail.ru_downloader`
+- [Скачать](https://github.com/galakhov/cloud.mail.ru_downloader_mac_os_x/archive/master.zip) и разархивировать либо склонировать с помощью команды:
+
+```console
+git clone https://github.com/galakhov/cloud.mail.ru_downloader_mac_os_x.git cloud.mail.ru_downloader
+```
+
 - Для скачивания можно использовать любой Download Manager. В примере ниже используется консольный загрузчик [Aria2c](https://aria2.github.io/).
 - Скрипт умеет корректно обрабатывать папки в облаке любой вложенности + поддерживается докачка файлов.
 
