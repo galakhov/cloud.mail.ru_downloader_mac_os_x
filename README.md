@@ -17,8 +17,9 @@
 
 - `open links.txt`
 - paste one or more mail.ru cloud links into the _links.txt_ file (the links should look like `https://cloud.mail.ru/public/9bFs/gVzxjU5uC` and be placed one per line)
-- run the script to first get the _direct links_ to all of the files from the cloud as a console output (the script also appends them into the `input.txt` file):
+- run the script to first read the _direct links_ to all of the files from the cloud and display them as the console output:
   `php cloud.mail.ru_downloader.php`
+- the script appends the _direct links_ into the `input.txt` file
 - the `aria2c` downloader will then start to download files from the `input.txt`
 - (alternatively you can paste the retrieved _direct links_ into the _Progressive Downloader_)
 

@@ -117,7 +117,7 @@
     $command = "\"{$aria2c}\" --file-allocation=none --min-tls-version=TLSv1.3 --max-connection-per-server=5 --split=5 --max-concurrent-downloads=5 --summary-interval=0 --continue --download-result=full --user-agent=\"Mozilla/5.0 (compatible; Firefox/3.6; Linux)\" --input-file=\"{$file4aria}\" --dir=\"./downloads\"";
     echo "Starting the downloads...\nCheck the ./downloads/ folder..." . PHP_EOL;
 
-    $command0 = "echo -e \033[104mPress any key to start downloading...\n";
+    $command0 = "echo -e \033[104mPress any key to start downloading or [CMD]+[C] to abort...\n";
     passthru("{$command0}");
     $command1 = "read pause";
     passthru("{$command1}");
