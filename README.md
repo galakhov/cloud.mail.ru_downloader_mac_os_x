@@ -1,41 +1,42 @@
 # Cloud.Mail.Ru Downloader
 
-### Installation on Mac OS X
+### Installation on macOS
 
-- follow any tutorial to install [php 7](https://medium.com/@crmcmullen/how-to-install-php-on-macos-10-13-high-sierra-and-10-14-mojave-using-homebrew-and-pecl-ef2276db3d62) with OpenSSL support for your version of Mac OS X
-- If you get "Cannot find libs..." errors during the php installation via terminal, run the command below and try again:
-  `xcode-select --install`
+- follow any of tutorials to install php 7 with OpenSSL support enabled ([like this one](https://medium.com/@crmcmullen/how-to-install-php-on-macos-10-13-high-sierra-and-10-14-mojave-using-homebrew-and-pecl-ef2276db3d62)) for your version of macOS
+- (If you get "Cannot find libs..." errors during the php installation via terminal, run the command below and try again:
+  `xcode-select --install`)
 - test your php version by entering this line in the terminal (the version should be between _5.x.x and 7.2.x_):
   `php -v`
 - check whether OpenSSL for php is installed and enabled by running the following line in the terminal and looking for OpenSSL in the displayed list:
   `php -i | grep enabled`
-- if you can't find the OpenSSL Support in the above list, install it by running the command below or by following any of the [tutorials](https://medium.com/this-old-code/installing-php-7-2-bc779b23dce8):
-  `brew install openssl`
-- download & install [aria2](https://github.com/aria2/aria2/releases/) (by default the dowloader script tries to start the `aria2c` in a console so the Mac OS X version of aria2 is the prerequisite: aria2-\*-osx-darwin.dmg). You can, however, use [Progressive Downloader](https://www.macpsd.net) or any other similar downloader for Mac OS X
+- (if you can't find the OpenSSL Support in the above list, install it by running the command below or by following any of the [tutorials](https://medium.com/this-old-code/installing-php-7-2-bc779b23dce8):
+  `brew install openssl`)
+- download & install [aria2](https://github.com/aria2/aria2/releases/) (by default the dowloader tries to start the `aria2c` from the bash that's why the installation of the macOS version of aria2 is the prerequisite: [aria2-\*-osx-darwin.dmg](https://github.com/aria2/aria2/releases/). You can, however, use [Progressive Downloader](https://www.macpsd.net) or any other similar macOS' downloader.
 
-### Running on Mac OS X
+### Running on macOS
 
-- paste one or more mail.ru cloud links into the _links.txt_ file
-- run the script to get the _direct links_ to all the files from the cloud as a console output:
+- `open links.txt`
+- paste one or more mail.ru cloud links into the _links.txt_ file (the links should look like `https://cloud.mail.ru/public/9bFs/gVzxjU5uC` and be placed one per line)
+- run the script to first get the _direct links_ to all of the files from the cloud as a console output (the script also appends them into the `input.txt` file):
   `php cloud.mail.ru_downloader.php`
-- paste the retrieved _direct links_ into the downloads folder you've chosen in the _Progressive Downloader_
+- the `aria2c` downloader will then start to download files from the `input.txt`
+- (alternatively you can paste the retrieved _direct links_ into the _Progressive Downloader_)
 
 ### Installation for Windows
 
 - Для работы скрипта нужно установить php на компьютер, например отсюда http://windows.php.net/download/ (если уже установлен какой-нибудь Веб-сервер, например, [Denwer](http://www.denwer.ru/) или [OpenServer](http://open-server.ru/), то php от него тоже подойдет).
 - Скрипт консольный, написан на PHP, поэтому работает в PHP версий _5.x.x-7.2.x_.
+- [Скачать](https://github.com/galakhov/cloud.mail.ru_downloader_mac_os_x/archive/master.zip) и разархивировать либо склонировать с помощью команды: `git clone https://github.com/galakhov/cloud.mail.ru_downloader_mac_os_x.git cloud.mail.ru_downloader`
 - Для скачивания можно использовать любой Download Manager. В примере ниже используется консольный загрузчик [Aria2c](https://aria2.github.io/).
-- Скрипт умеет корректно обрабатывать папки в облаке любой вложенности.
-- Поддерживается докачка файлов.
+- Скрипт умеет корректно обрабатывать папки в облаке любой вложенности + поддерживается докачка файлов.
 
 ### Running on Windows
 
-- Скачать релиз скрипта, в который уже включена минимальная версия php
-- В файл `links.txt` записать публичные ссылки на скачивание с облака вида https://cloud.mail.ru/public/9bFs/gVzxjU5uC по одной на строку.
-- Запустить `start.bat`
+- В файле `links.txt` сохранить публичные ссылки на скачивание с облака вида `https://cloud.mail.ru/public/9bFs/gVzxjU5uC` по одной на строку.
+- Запустить с помощью команды: `php cloud.mail.ru_downloader.php`
 - Скрипт сформирует файл с прямыми ссылками на скачивание `input.txt`.
-- После чего запустится Aria2c Downloader, который скачает файлы из `input.txt`.
-- Остаётся наблюдать за закачкой и ждать её завершения. Скачанные файлы окажутся в папке `downloads`.
+- После чего запустится Aria2c Downloader, который начнёт скачивать файлы из `input.txt`.
+- Остаётся наблюдать за закачкой и ждать её завершения. Скачанные файлы окажутся в папке `./downloads`.
 
 [![Скрипт за работой](image.png)](image.png)
 
