@@ -6,9 +6,13 @@
 - (If you get "Cannot find libs..." errors during the php installation via terminal, run the command below and try again:
   `xcode-select --install`)
 - test your php version by entering this line in the terminal (the version should be between _5.x.x and 7.2.x_):
-  `php -v`
+  ```console
+  php -v
+  ```
 - check whether OpenSSL for php is installed and enabled by running the following line in the terminal and looking for OpenSSL in the displayed list:
-  `php -i | grep enabled`
+  ```console
+  php -i | grep enabled
+  ```
 - (if you can't find the OpenSSL Support in the above list, install it by running the command below or by following any of the [tutorials](https://medium.com/this-old-code/installing-php-7-2-bc779b23dce8):
   `brew install openssl`)
 - download & install [aria2](https://github.com/aria2/aria2/releases/) (by default the dowloader tries to start the `aria2c` from the bash that's why the installation of the macOS version of aria2 is the prerequisite: [aria2-\*-osx-darwin.dmg](https://github.com/aria2/aria2/releases/). You can, however, use [Progressive Downloader](https://www.macpsd.net) or any other similar macOS' downloader.
@@ -18,7 +22,9 @@
 - `open links.txt`
 - paste one or more mail.ru cloud links into the _links.txt_ file (the links should look like `https://cloud.mail.ru/public/9bFs/gVzxjU5uC` and be placed one per line)
 - run the script to first read the _direct links_ to all of the files from the cloud and display them as the console output:
-  `php cloud.mail.ru_downloader.php`
+  ```console
+  php cloud.mail.ru_downloader.php
+  ```
 - the script appends the _direct links_ into the `input.txt` file
 - the `aria2c` downloader will then start to download files from the `input.txt`
 - (alternatively you can paste the retrieved _direct links_ into the _Progressive Downloader_)
