@@ -63,16 +63,16 @@ git clone https://github.com/galakhov/cloud.mail.ru_downloader_mac_os_x.git clou
 
 [![Cloud.MailRu.Downloader Video example](https://img.youtube.com/vi/WnJyXEdEqfI/0.jpg)](https://www.youtube.com/watch?v=WnJyXEdEqfI)
 
-### If you want to emulate [WebDAV](https://github.com/yar229/WebDavMailRuCloud) of cloud.mail.ru
+### If you want to emulate [WebDAV](https://github.com/yar229/WebDavMailRuCloud) of cloud.mail.ru on macOS
 
--
+- you'll need to install `mono` first:
 
 ```console
 brew install mono # (you need to have homebrew installed already)
 ```
 
-- alternatively you can download and install mono following [these instructions](https://www.mono-project.com/docs/about-mono/supported-platforms/macos/)
-- then just start any exe file as it's described [here](https://github.com/yar229/WebDavMailRuCloud#mac-os-x):
+- alternatively you can download and install `mono` following [these instructions](https://www.mono-project.com/docs/about-mono/supported-platforms/macos/)
+- then just start any exe file as described [here](https://github.com/yar229/WebDavMailRuCloud#mac-os-x) by entering:
 
 ```console
 mono wdmrc.exe -p 7000
