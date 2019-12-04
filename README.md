@@ -72,7 +72,7 @@ brew install mono # (you need to have homebrew installed already)
 ```
 
 - alternatively you can download and install `mono` following [these instructions](https://www.mono-project.com/docs/about-mono/supported-platforms/macos/)
-- then just start any exe file as described [here](https://github.com/yar229/WebDavMailRuCloud#mac-os-x) by entering:
+- then just start any exe file as described [here](https://github.com/yar229/WebDavMailRuCloud#mac-os-x) by entering any open port (like '7000' in this example):
 
 ```console
 mono wdmrc.exe -p 7000
