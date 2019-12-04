@@ -31,9 +31,9 @@
 
 ### Installation for Windows
 
-- Для работы скрипта нужно установить php на компьютер, например отсюда http://windows.php.net/download/ (если уже установлен какой-нибудь Веб-сервер, например, [Denwer](http://www.denwer.ru/) или [OpenServer](http://open-server.ru/), то php от него тоже подойдет).
+- Для работы скрипта нужно установить php на компьютер, например отсюда http://windows.php.net/download/ (если уже установлен какой-нибудь веб-сервер, например, [Denwer](http://www.denwer.ru/) или [OpenServer](http://open-server.ru/), то php от него тоже подойдет).
 - Скрипт консольный, написан на PHP, поэтому работает в PHP версий _5.x.x-7.2.x_.
-- [Скачать](https://github.com/galakhov/cloud.mail.ru_downloader_mac_os_x/archive/master.zip) и разархивировать либо склонировать с помощью команды:
+- [Скачать](https://github.com/galakhov/cloud.mail.ru_downloader_mac_os_x/archive/master.zip) и разархивировать либо склонировать с помощью команды (для её запуска нужен [git](https://git-scm.com/download/win)):
 
 ```console
 git clone https://github.com/galakhov/cloud.mail.ru_downloader_mac_os_x.git cloud.mail.ru_downloader
@@ -44,8 +44,8 @@ git clone https://github.com/galakhov/cloud.mail.ru_downloader_mac_os_x.git clou
 
 ### Running on Windows
 
-- В файле `links.txt` сохранить публичные ссылки на скачивание с облака вида `https://cloud.mail.ru/public/9bFs/gVzxjU5uC` по одной на строку.
-- Запустить с помощью команды: `php cloud.mail.ru_downloader.php`
+- Открыть файл `links.txt` и сохранить в него публичные ссылки для скачивания с облака вида `https://cloud.mail.ru/public/9bFs/gVzxjU5uC` по одной на строку.
+- Скрипт запустить с помощью команды: `php cloud.mail.ru_downloader.php`
 - Скрипт сформирует файл с прямыми ссылками на скачивание `input.txt`.
 - После чего запустится Aria2c Downloader, который начнёт скачивать файлы из `input.txt`.
 - Остаётся наблюдать за закачкой и ждать её завершения. Скачанные файлы окажутся в папке `./downloads`.
@@ -65,9 +65,17 @@ git clone https://github.com/galakhov/cloud.mail.ru_downloader_mac_os_x.git clou
 
 ### If you want to emulate [WebDAV](https://github.com/yar229/WebDavMailRuCloud) of cloud.mail.ru
 
-- `brew install mono # (you need to have homebrew installed already)`
+-
+
+```console
+brew install mono # (you need to have homebrew installed already)
+```
+
 - alternatively you can download and install mono following [these instructions](https://www.mono-project.com/docs/about-mono/supported-platforms/macos/)
 - then just start any exe file as it's described [here](https://github.com/yar229/WebDavMailRuCloud#mac-os-x):
-  `mono wdmrc.exe -p 7000`
+
+```console
+mono wdmrc.exe -p 7000
+```
 
 #### Thanks to [Geograph-us](https://github.com/Geograph-us/Cloud-Mail.Ru-Downloader) for the initial version and the installation instructions for Windows
