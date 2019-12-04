@@ -13,7 +13,7 @@
   ```console
   php -i | grep enabled
   ```
-- (if you can't find the OpenSSL Support in the above list, install it by running the command below or by following any of the [tutorials](https://medium.com/this-old-code/installing-php-7-2-bc779b23dce8):
+- (if you can't find the 'OpenSSL Support' in the list displayed after running the previous command, install it by running the next command or by following any of the [tutorials](https://medium.com/this-old-code/installing-php-7-2-bc779b23dce8):
   `brew install openssl`)
 - download & install [aria2](https://github.com/aria2/aria2/releases/) (by default the dowloader tries to start the `aria2c` from the bash that's why the installation of the macOS version of aria2 is the prerequisite: [aria2-\*-osx-darwin.dmg](https://github.com/aria2/aria2/releases/). You can, however, use [Progressive Downloader](https://www.macpsd.net) or any other similar macOS' downloader.
 
