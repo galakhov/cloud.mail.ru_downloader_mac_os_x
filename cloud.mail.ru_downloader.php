@@ -120,7 +120,7 @@
     // TODO: do you want to limit your download speed?
     /* aria2c --file-allocation=none --min-tls-version=TLSv1.3 --max-connection-per-server=5 --split=5 --max-concurrent-downloads=5 --summary-interval=0 --continue --download-result=full --user-agent="Mozilla/5.0 (compatible; Firefox/3.6; Linux)" --input-file="input.txt" --dir="./downloads" --max-overall-download-limit=250K */
 
-    $command0 = "echo \033[104mPress any key to start downloading or [CMD]+[C] to abort...\e[39m\n";
+    $command0 = "echo \033[104mPress any key to start downloading or [CMD]+[C] to abort...\e[0m\n\n";
     passthru("{$command0}");
     $command1 = "read pause";
     passthru("{$command1}");
