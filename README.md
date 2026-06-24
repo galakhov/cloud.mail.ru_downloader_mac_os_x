@@ -23,7 +23,7 @@
 - paste one or more mail.ru cloud links into the _links.txt_ file (the links should look like `https://cloud.mail.ru/public/9bFs/gVzxjU5uC` and be placed one per line)
 - run the script to first read the _direct links_ to all of the files from the cloud and display them as the console output:
   ```console
-  php cloud_mail_downloader.php
+  php cloud_mail_downloader_macos.php
   ```
 - the script appends the _direct links_ into the `input.txt` file
 - the `aria2c` downloader will then start to download files from the `input.txt`
@@ -42,7 +42,7 @@ git clone https://github.com/galakhov/cloud.mail.ru_downloader_mac_os_x.git clou
 - Для скачивания можно использовать любой Download Manager. В примере ниже используется консольный загрузчик [Aria2c](https://aria2.github.io/).
 - Скрипт умеет корректно обрабатывать папки в облаке любой вложенности + поддерживается докачка файлов.
 
-### Running on Windows
+### Running on Windows (RU)
 
 - Открыть файл `links.txt` и сохранить в него публичные ссылки для скачивания с облака вида `https://cloud.mail.ru/public/9bFs/gVzxjU5uC` по одной на строку.
 - Скрипт запустить с помощью команды: `php cloud.mail.ru_downloader.php`
@@ -62,6 +62,11 @@ git clone https://github.com/galakhov/cloud.mail.ru_downloader_mac_os_x.git clou
 ### Видео-пример:
 
 [![Cloud.MailRu.Downloader Video example](https://img.youtube.com/vi/WnJyXEdEqfI/0.jpg)](https://www.youtube.com/watch?v=WnJyXEdEqfI)
+
+### Запуск:
+```console
+php cloud_mail_downloader_windows.php
+```
 
 ### If you want to emulate [WebDAV](https://github.com/yar229/WebDavMailRuCloud) of cloud.mail.ru on macOS
 
